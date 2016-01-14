@@ -45,7 +45,7 @@ void *erealloc(void *ptr, size_t size)
 }
 
 #ifdef FRT_IS_C99
-extern void usleep(unsigned long usec);
+extern int usleep(unsigned int usec);
 extern int unlink(const char *path);
 #else
 #  include <unistd.h>
