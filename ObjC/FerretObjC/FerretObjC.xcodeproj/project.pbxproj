@@ -171,6 +171,13 @@
 		8271D9EC1C47981300B03B44 /* uchar-ucs4.rl in Resources */ = {isa = PBXBuildFile; fileRef = 8271D8F31C47981300B03B44 /* uchar-ucs4.rl */; };
 		8271D9ED1C47981300B03B44 /* uchar-utf8.rl in Resources */ = {isa = PBXBuildFile; fileRef = 8271D8F41C47981300B03B44 /* uchar-utf8.rl */; };
 		8271D9EE1C47981300B03B44 /* url.rl in Resources */ = {isa = PBXBuildFile; fileRef = 8271D8F51C47981300B03B44 /* url.rl */; };
+		8271DC1C1C47A91700B03B44 /* FIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 8271DC1A1C47A91700B03B44 /* FIndex.h */; };
+		8271DC1D1C47A91700B03B44 /* FIndex.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8271DC1B1C47A91700B03B44 /* FIndex.mm */; };
+		8271DC211C47AA8700B03B44 /* FSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 8271DC1F1C47AA8700B03B44 /* FSearch.h */; };
+		8271DC221C47AA8700B03B44 /* FSearch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8271DC201C47AA8700B03B44 /* FSearch.mm */; };
+		8271DC251C47AD3E00B03B44 /* FSearch+testHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 8271DC231C47AD3E00B03B44 /* FSearch+testHelper.h */; };
+		8271DC261C47AD3E00B03B44 /* FSearch+testHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8271DC241C47AD3E00B03B44 /* FSearch+testHelper.m */; };
+		8271DC281C47B55900B03B44 /* searchHelpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8271DC271C47B55900B03B44 /* searchHelpTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,6 +360,13 @@
 		8271D8F31C47981300B03B44 /* uchar-ucs4.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "uchar-ucs4.rl"; sourceTree = "<group>"; };
 		8271D8F41C47981300B03B44 /* uchar-utf8.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "uchar-utf8.rl"; sourceTree = "<group>"; };
 		8271D8F51C47981300B03B44 /* url.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = url.rl; sourceTree = "<group>"; };
+		8271DC1A1C47A91700B03B44 /* FIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIndex.h; sourceTree = "<group>"; };
+		8271DC1B1C47A91700B03B44 /* FIndex.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FIndex.mm; sourceTree = "<group>"; };
+		8271DC1F1C47AA8700B03B44 /* FSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSearch.h; sourceTree = "<group>"; };
+		8271DC201C47AA8700B03B44 /* FSearch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FSearch.mm; sourceTree = "<group>"; };
+		8271DC231C47AD3E00B03B44 /* FSearch+testHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FSearch+testHelper.h"; path = "help/FSearch+testHelper.h"; sourceTree = "<group>"; };
+		8271DC241C47AD3E00B03B44 /* FSearch+testHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FSearch+testHelper.m"; path = "help/FSearch+testHelper.m"; sourceTree = "<group>"; };
+		8271DC271C47B55900B03B44 /* searchHelpTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchHelpTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,8 +409,8 @@
 		8271D8111C47977200B03B44 /* FerretObjC */ = {
 			isa = PBXGroup;
 			children = (
+				8271DC1E1C47AA6A00B03B44 /* ObjC */,
 				8271D82B1C47981300B03B44 /* c */,
-				8271D8121C47977200B03B44 /* FerretObjC.h */,
 				8271D8141C47977200B03B44 /* Info.plist */,
 			);
 			path = FerretObjC;
@@ -407,6 +421,7 @@
 			children = (
 				8271D81E1C47977200B03B44 /* FerretObjCTests.m */,
 				8271D8201C47977200B03B44 /* Info.plist */,
+				8271DC271C47B55900B03B44 /* searchHelpTest.m */,
 			);
 			path = FerretObjCTests;
 			sourceTree = "<group>";
@@ -662,6 +677,20 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		8271DC1E1C47AA6A00B03B44 /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				8271D8121C47977200B03B44 /* FerretObjC.h */,
+				8271DC1A1C47A91700B03B44 /* FIndex.h */,
+				8271DC1B1C47A91700B03B44 /* FIndex.mm */,
+				8271DC1F1C47AA8700B03B44 /* FSearch.h */,
+				8271DC201C47AA8700B03B44 /* FSearch.mm */,
+				8271DC231C47AD3E00B03B44 /* FSearch+testHelper.h */,
+				8271DC241C47AD3E00B03B44 /* FSearch+testHelper.m */,
+			);
+			name = ObjC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -674,6 +703,7 @@
 				8271D9511C47981300B03B44 /* mempool.h in Headers */,
 				8271D9421C47981300B03B44 /* analysis.h in Headers */,
 				8271D9501C47981300B03B44 /* lang.h in Headers */,
+				8271DC211C47AA8700B03B44 /* FSearch.h in Headers */,
 				8271D9751C47981300B03B44 /* stem_ISO_8859_1_danish.h in Headers */,
 				8271D98D1C47981300B03B44 /* stem_ISO_8859_1_swedish.h in Headers */,
 				8271D9561C47981300B03B44 /* search.h in Headers */,
@@ -697,6 +727,7 @@
 				8271D9A31C47981300B03B44 /* stem_UTF_8_norwegian.h in Headers */,
 				8271D95A1C47981300B03B44 /* threading.h in Headers */,
 				8271D9AB1C47981300B03B44 /* stem_UTF_8_russian.h in Headers */,
+				8271DC251C47AD3E00B03B44 /* FSearch+testHelper.h in Headers */,
 				8271D9AD1C47981300B03B44 /* stem_UTF_8_spanish.h in Headers */,
 				8271D9891C47981300B03B44 /* stem_ISO_8859_1_portuguese.h in Headers */,
 				8271D9591C47981300B03B44 /* symbol.h in Headers */,
@@ -720,6 +751,7 @@
 				8271D9451C47981300B03B44 /* config.h in Headers */,
 				8271D9521C47981300B03B44 /* multimapper.h in Headers */,
 				8271D94C1C47981300B03B44 /* helper.h in Headers */,
+				8271DC1C1C47A91700B03B44 /* FIndex.h in Headers */,
 				8271D9571C47981300B03B44 /* similarity.h in Headers */,
 				8271D9461C47981300B03B44 /* document.h in Headers */,
 				8271D9831C47981300B03B44 /* stem_ISO_8859_1_italian.h in Headers */,
@@ -855,6 +887,7 @@
 				8271D9C01C47981300B03B44 /* field_index.c in Sources */,
 				8271D9BA1C47981300B03B44 /* array.c in Sources */,
 				8271D9B01C47981300B03B44 /* stem_UTF_8_turkish.c in Sources */,
+				8271DC261C47AD3E00B03B44 /* FSearch+testHelper.m in Sources */,
 				8271D9A41C47981300B03B44 /* stem_UTF_8_porter.c in Sources */,
 				8271D9C41C47981300B03B44 /* hash.c in Sources */,
 				8271D9D71C47981300B03B44 /* q_prefix.c in Sources */,
@@ -871,6 +904,7 @@
 				8271D9C61C47981300B03B44 /* helper.c in Sources */,
 				8271D9D01C47981300B03B44 /* q_filtered_query.c in Sources */,
 				8271D9941C47981300B03B44 /* stem_UTF_8_dutch.c in Sources */,
+				8271DC1D1C47A91700B03B44 /* FIndex.mm in Sources */,
 				8271D9C21C47981300B03B44 /* fs_store.c in Sources */,
 				8271D9981C47981300B03B44 /* stem_UTF_8_finnish.c in Sources */,
 				8271D9D31C47981300B03B44 /* q_multi_term.c in Sources */,
@@ -883,6 +917,7 @@
 				8271D9AE1C47981300B03B44 /* stem_UTF_8_swedish.c in Sources */,
 				8271D9C81C47981300B03B44 /* index.c in Sources */,
 				8271D9841C47981300B03B44 /* stem_ISO_8859_1_norwegian.c in Sources */,
+				8271DC221C47AA8700B03B44 /* FSearch.mm in Sources */,
 				8271D9D61C47981300B03B44 /* q_phrase.c in Sources */,
 				8271D9E11C47981300B03B44 /* scanner_mb.c in Sources */,
 				8271D9731C47981300B03B44 /* utilities.c in Sources */,
@@ -937,6 +972,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8271DC281C47B55900B03B44 /* searchHelpTest.m in Sources */,
 				8271D81F1C47977200B03B44 /* FerretObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
