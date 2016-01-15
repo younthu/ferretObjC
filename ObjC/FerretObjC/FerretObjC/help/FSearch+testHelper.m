@@ -10,6 +10,7 @@
 #include "index.h"
 #include "search.h"
 #include "internal.h"
+#include "global.h"
 
 char *field = "text";
 IndexReader *ir;
@@ -17,12 +18,40 @@ Searcher *searcher;
 
 @implementation FSearch (testHelper)
 
+void create_index(Store *store, Config config)
+{
+    int i;
+    IndexWriter *iw;
+    Analyzer *a = whitespace_analyzer_new(true);
+    FieldInfos *fis = fis_new(STORE_NO, INDEX_UNTOKENIZED, TERM_VECTOR_NO);
+    char data[1000];
+    Document *doc;
+    index_create(store, fis);
+    fis_deref(fis);
+    
+    iw = iw_open(store, a, &config);
+    
+    
+    //config.merge_factor = 10;
+    //config.min_merge_docs = 1000;
+    
+    for (i = 0; i < 99999; i++) {
+        if (i%10000 == 0) printf("up to %d\n", i);
+        doc = doc_new();
+        sprintf(data, "<%d>", rand() % 1000000);
+        doc_add_field(doc, df_add_data(df_new("num"), data));
+        iw_add_doc(iw, doc);
+        doc_destroy(doc);
+    }
+    //iw_optimize(iw);
+    iw_close(iw);
+}
 
 void test_search2(char *q_str, int slop)
 {
-    Store *store = open_fs_store(".");
-    ir = ir_open(store);
-    searcher = isea_new(ir);
+
+    
+   
     
     char *t;
     Query *q = make_phrase_query(t=estrdup(q_str), slop); free(t);
@@ -42,7 +71,23 @@ void test_search2(char *q_str, int slop)
     q_deref(q);
 }
 
-+ (void) test {
++ (void) testInFolder:(NSString*)folder {
+    Store *store = open_fs_store("./index_folder");
+    
+    Config config = default_config;
+    config.max_field_length = 0x7FFFFFFF;
+    config.max_buffer_memory = 0x40000000;
+    config.chunk_size = 0x8000000;
+    config.max_buffered_docs = 1000;
+    config.merge_factor = 11;
+    
+    init(0, NULL);
+    create_index(store, config);
+    
+    
+    ir = ir_open(store);
+    searcher = isea_new(ir);
+    
     for (int i = 0; i < 1000; i++) {
         test_search2("less than", 0);
         test_search2("such as", 0);

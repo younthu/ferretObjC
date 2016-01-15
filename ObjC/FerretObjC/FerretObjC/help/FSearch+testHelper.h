@@ -10,5 +10,5 @@
 
 @interface FSearch (testHelper)
 
-+(void )test;
++(void )testInFolder:(NSString*)folder;
 @end
